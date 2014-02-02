@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<ul class="nav navbar-nav side-nav">
+
+		<xp:repeat id="repeat1" rows="30" disableOutputTag="true"
+			var="page" value="#{javascript:admin.navigation}">
+			<xp:panel tagName="li"
+				styleClass="#{javascript:return view.getPageName().indexOf(page.getTarget())!=-1?'active':''}">
+				<xp:this.rendered><![CDATA[#{javascript:!page.isDropdown() && !page.isDropdownitem()}]]></xp:this.rendered>
+				<xp:link value="/#{javascript:page.getTarget()}">
+					<i class="fa #{javascript:page.getIcon()}">
+					</i>
+					<xp:text value="#{javascript:page.getLabel()}">
+					</xp:text>
+				</xp:link>
+			</xp:panel>
+
+			<xp:panel tagName="li" styleClass="dropdown">
+				<xp:this.rendered><![CDATA[#{javascript:page.isDropdown() && !page.isDropdownitem()}]]></xp:this.rendered>
+				<xp:panel disableOutputTag="true">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<i class="fa fa-caret-square-o-down">
+						</i>
+						<xp:text value="#{javascript:page.getLabel()}">
+						</xp:text>
+						<b class="caret"></b>
+					</a>
+				</xp:panel>
+				<ul class="dropdown-menu">
+					<xp:repeat var="subpage">
+						<xp:this.value><![CDATA[#{javascript:var col:ViewEntryCollection = database.getDocumentByUNID(page.getUnid()).getResponses();
+return col;}]]></xp:this.value>
+						<xp:panel tagName="li">
+							<xp:link>
+								<xp:this.value><![CDATA[#{javascript:subpage.getItemValueString("pageTarget")}]]></xp:this.value>
+								<i class="fa #{javascript:subpage.getItemValueString('pageIcon')}">
+								</i>
+								<xp:text value="#{javascript:subpage.getItemValueString('pageLabel')}">
+								</xp:text>
+							</xp:link>
+						</xp:panel>
+					</xp:repeat>
+				</ul>
+			</xp:panel>
+		</xp:repeat>
+	</ul>
+</xp:view>
