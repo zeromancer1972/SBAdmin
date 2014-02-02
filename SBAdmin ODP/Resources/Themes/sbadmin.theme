@@ -1,0 +1,67 @@
+
+	<!--
+		The default theme contents use theme inheritance. Application themes
+		can extend an existing global theme using the extends attribute.
+		Existing themes include the following options: 1. webstandard 2. oneui
+		3. notes
+	-->
+<theme extends="webstandard" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
+	<resource>
+		<content-type>text/css</content-type>
+		<href>css/bootstrap.min.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>css/sb-admin.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>font-awesome/css/font-awesome.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>app.css</href>
+	</resource>
+	
+	<!-- 
+	<resource>
+		<content-type>text/css</content-type>
+		<href>custom_theme.css</href>
+	</resource>
+	 -->
+
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>js/jquery-1.10.2.js</href>
+	</resource>
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>js/bootstrap.min.js</href>
+	</resource>
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>js/tablesorter/jquery.tablesorter.js</href>
+	</resource>
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>js/tablesorter/tables.js</href>
+	</resource>
+
+	<control override="false">
+		<!-- set a default page name unless you define it in the page itself -->
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>#{javascript:@DbTitle()}</value>
+		</property>
+		<!-- the favicon for browser bookmark -->
+
+		<property>
+			<name>pageIcon</name>
+			<value>dashboard.ico</value>
+		</property>
+
+	</control>
+
+</theme>

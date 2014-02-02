@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout title="Dashboard" subtitle="Overview">
+		<xp:this.facets>
+			<xc:_dashboard xp:key="facetPage"></xc:_dashboard>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
