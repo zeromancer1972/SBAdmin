@@ -63,6 +63,10 @@ if(url.indexOf(".xsp")==-1){
 							&#160;Oliver Busse | Apache License 2.0
 						</a>
 					</li>
+					<li>
+						<a href="https://github.com/zeromancer1972/SBAdmin" target="_blank">Fork
+							me on GitHub</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
