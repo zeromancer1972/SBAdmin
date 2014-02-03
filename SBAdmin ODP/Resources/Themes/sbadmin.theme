@@ -47,6 +47,11 @@
 		<content-type>application/x-javascript</content-type>
 		<href>js/tablesorter/tables.js</href>
 	</resource>
+	
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>app.js</href>
+	</resource>
 
 	<control override="false">
 		<!-- set a default page name unless you define it in the page itself -->

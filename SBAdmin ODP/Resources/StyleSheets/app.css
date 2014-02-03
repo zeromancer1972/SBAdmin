@@ -1,8 +1,16 @@
-i.fa {
+li>a>i.fa {
 	margin-right: 5px;
 }
 
 i.fa-sort {
+	margin-left: 5px;
+}
+
+div.text-right>a>i,div.text-right>i {
+	margin-left: 5px;
+}
+
+b.caret {
 	margin-left: 5px;
 }
 
@@ -28,4 +36,10 @@ h1 small {
 	{
 	border-top: solid 1px #000;
 	border-bottom: solid 1px transparent;
+}
+
+.logindialog {
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }

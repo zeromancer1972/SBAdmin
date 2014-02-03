@@ -1,21 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" createForm="false"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
-	<xp:this.beforePageLoad><![CDATA[#{javascript:var url = facesContext.getExternalContext().getRequest().getRequestURI();
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:debug="http://www.openntf.org/xsp/debugtoolbar"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:// user is not logged in
+if(@UserName().equals("Anonymous")){
+context.redirectToPage("login.xsp");
+return;
+}
+
+
+// user is logged in
+var url = facesContext.getExternalContext().getRequest().getRequestURI();
 if(url.indexOf(".xsp")==-1){
 	if(url.endsWith("/")){
 		url = url.substr(0, url.length-1)
 	}
 	context.redirectToPage(url+view.getPageName())
 }}]]></xp:this.beforePageLoad>
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
 	<div id="wrapper">
 
 		<!-- Sidebar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<nav class="navbar navbar-inverse navbar-fixed-top"
+			role="navigation">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-ex1-collapse">
+				<button type="button" class="navbar-toggle"
+					data-toggle="collapse" data-target=".navbar-ex1-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -23,7 +35,8 @@ if(url.indexOf(".xsp")==-1){
 				</button>
 
 				<a class="navbar-brand" href="#">
-					<xp:image url="/Dashboard.png" style="margin-top:-5px; margin-right:10px;">
+					<xp:image url="/Dashboard.png"
+						style="margin-top:-5px; margin-right:10px;">
 					</xp:image>
 					<xp:text value="#{javascript:@DbTitle()}"></xp:text>
 				</a>
@@ -39,7 +52,8 @@ if(url.indexOf(".xsp")==-1){
 			<div class="row">
 				<div class="col-lg-12">
 					<h1>
-						<xp:text disableTheme="true" value="#{javascript:compositeData.title}">
+						<xp:text disableTheme="true"
+							value="#{javascript:compositeData.title}">
 						</xp:text>
 						<small>
 							<xp:text disableTheme="true"
@@ -51,21 +65,27 @@ if(url.indexOf(".xsp")==-1){
 			</div>
 			<xp:callback facetName="facetPage" id="facetPage"></xp:callback>
 		</div>
-		<nav class="nav navbar-default navbar-fixed-bottom navbar-inverse"
+		<nav
+			class="nav navbar-default navbar-fixed-bottom navbar-inverse"
 			role="navigation">
 			<div class="container-fluid pull-right">
 				<ul class="nav navbar-nav">
 					<li>
-						<a href="#" data-toggle="modal" data-target="#dlgAbout">
+						<a href="#" data-toggle="modal"
+							data-target="#dlgAbout">
 							&#169;&#160;
-							<xp:text value="#{javascript:@Text(@Year(@Today()))}">
+							<xp:text
+								value="#{javascript:@Text(@Year(@Today()))}">
 							</xp:text>
 							&#160;Oliver Busse | Apache License 2.0
 						</a>
 					</li>
 					<li>
-						<a href="https://github.com/zeromancer1972/SBAdmin" target="_blank">Fork
-							me on GitHub</a>
+						<a
+							href="https://github.com/zeromancer1972/SBAdmin"
+							target="_blank">
+							Fork me on GitHub
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -77,17 +97,22 @@ if(url.indexOf(".xsp")==-1){
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<button type="button" class="close"
+						data-dismiss="modal" aria-hidden="true">
+						x
+					</button>
 					<h4>About</h4>
 				</div>
-				<div class="modal-body">
-					foo
-		</div>
+				<div class="modal-body">foo</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">
-						OK</button>
+					<button type="button" class="btn btn-primary"
+						data-dismiss="modal">
+						OK
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	
 </xp:view>

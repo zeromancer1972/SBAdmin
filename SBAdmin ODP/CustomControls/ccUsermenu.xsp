@@ -142,36 +142,33 @@
 		<li class="dropdown user-dropdown">
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<i class="fa fa-user"></i>
-				John Smith
+				<xp:text>
+					<xp:this.value><![CDATA[#{javascript:@Name("[CN]", @UserName())}]]></xp:this.value>
+				</xp:text>
 				<b class="caret"></b>
 			</a>
 			<ul class="dropdown-menu">
-				<li>
-					<a href="#">
-						<i class="fa fa-user"></i>
-						Profile
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i class="fa fa-envelope"></i>
-						Inbox
-						<span class="badge">7</span>
-					</a>
-				</li>
-				<li>
-					<a href="#">
-						<i class="fa fa-gear"></i>
-						Settings
-					</a>
-				</li>
+				<xp:panel tagName="li">
+					<xp:link escape="false" id="link2"
+						value="/profile.xsp" disableTheme="true">
+						<xp:this.text><![CDATA[#{javascript:'<i class="fa fa-user"></i>Profile'}]]></xp:this.text>
+					</xp:link>
+				</xp:panel>
+				<xp:panel tagName="li">
+					<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+					<xp:link escape="false" id="link1"
+						value="/settings.xsp" disableTheme="true">
+						<xp:this.text><![CDATA[#{javascript:'<i class="fa fa-cog"></i>Settings'}]]></xp:this.text>
+					</xp:link>
+				</xp:panel>
+				
 				<li class="divider"></li>
-				<li>
-					<a href="#">
-						<i class="fa fa-power-off"></i>
-						Log Out
-					</a>
-				</li>
+				<xp:panel tagName="li">
+				<xp:link escape="false" id="link3"
+					value="/?logout&amp;redirectto=#{javascript:database.getFilePath()}/index.xsp">
+					<xp:this.text><![CDATA[#{javascript:'<i class="fa fa-power-off"></i>Logout'}]]></xp:this.text>
+				</xp:link>
+				</xp:panel>
 			</ul>
 		</li>
 	</ul>
