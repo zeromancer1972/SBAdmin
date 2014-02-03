@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+
+	<xc:ccLayout subtitle="Your profile">
+
+		<xc:this.title><![CDATA[#{javascript:@Name("[CN]", @UserName())}]]></xc:this.title>
+	</xc:ccLayout></xp:view>
