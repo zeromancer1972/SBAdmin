@@ -14,7 +14,7 @@
 					</xp:text>
 				</xp:link>
 			</xp:panel>
-
+			
 			<xp:panel tagName="li" styleClass="dropdown">
 				<xp:this.rendered><![CDATA[#{javascript:page.isDropdown() && !page.isDropdownitem()}]]></xp:this.rendered>
 				<xp:panel disableOutputTag="true">
@@ -33,9 +33,11 @@ return col;}]]></xp:this.value>
 						<xp:panel tagName="li">
 							<xp:link>
 								<xp:this.value><![CDATA[#{javascript:subpage.getItemValueString("pageTarget")}]]></xp:this.value>
-								<i class="fa #{javascript:subpage.getItemValueString('pageIcon')}">
+								<i
+									class="fa #{javascript:subpage.getItemValueString('pageIcon')}">
 								</i>
-								<xp:text value="#{javascript:subpage.getItemValueString('pageLabel')}">
+								<xp:text
+									value="#{javascript:subpage.getItemValueString('pageLabel')}">
 								</xp:text>
 							</xp:link>
 						</xp:panel>

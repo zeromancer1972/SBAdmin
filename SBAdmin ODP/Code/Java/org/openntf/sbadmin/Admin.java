@@ -16,6 +16,10 @@ public class Admin implements Serializable {
 	private List<Page> navigation;
 
 	public Admin() {
+		initNavigationFromDocuments();
+	}
+
+	private void initNavigationFromDocuments() {
 		this.navigation = new ArrayList<Page>();
 		boolean isDropdown = false;
 		try {
@@ -27,7 +31,8 @@ public class Admin implements Serializable {
 				tmp = col.getNext(ent);
 				doc = ent.getDocument();
 				isDropdown = doc.getResponses().getCount() > 0;
-				this.navigation.add(new Page(doc.getItemValueString("pageLabel"), doc.getItemValueString("pageIcon"), doc.getItemValueString("pageTarget"), isDropdown, doc.isResponse(), doc.getUniversalID()));
+				this.navigation.add(new Page(doc.getItemValueString("pageLabel"), doc.getItemValueString("pageIcon"), doc.getItemValueString("pageTarget"), isDropdown, doc.isResponse(), doc
+						.getUniversalID()));
 				ent.recycle();
 				ent = tmp;
 			}
@@ -40,7 +45,7 @@ public class Admin implements Serializable {
 
 	public List<Page> getNavigation() {
 		return this.navigation;
-		
+
 	}
 
 }
