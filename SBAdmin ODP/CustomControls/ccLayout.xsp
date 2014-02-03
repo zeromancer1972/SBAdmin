@@ -56,7 +56,7 @@ if(url.indexOf(".xsp")==-1){
 			<div class="container-fluid pull-right">
 				<ul class="nav navbar-nav">
 					<li>
-						<a>
+						<a href="#" data-toggle="modal" data-target="#dlgAbout">
 							&#169;&#160;
 							<xp:text value="#{javascript:@Text(@Year(@Today()))}">
 							</xp:text>
@@ -72,4 +72,22 @@ if(url.indexOf(".xsp")==-1){
 		</nav>
 
 	</div><!-- /#wrapper -->
+
+	<div id="dlgAbout" role="dialog" class="modal bs-modal-lg">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<h4>About</h4>
+				</div>
+				<div class="modal-body">
+					foo
+		</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">
+						OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </xp:view>
