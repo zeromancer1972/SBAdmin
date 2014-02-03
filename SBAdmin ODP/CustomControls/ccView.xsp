@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="pages"></xp:dominoView>
+	</xp:this.data>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">View</h3>
+		</div>
+		<div class="panel-body">
+			<table class="table table-bordered table-hover table-striped tablesorter">
+				<thead>
+					<tr>
+						<th class="header">
+							label
+							<i class="fa fa-sort"></i>
+						</th>
+						<th class="header">
+							tatget
+							<i class="fa fa-sort"></i>
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<xp:repeat id="repeat1" rows="30" value="#{view1}" var="entry">
+						<tr>
+							<td>
+								<xp:label id="label1">
+									<xp:this.value><![CDATA[#{javascript:entry.getDocument().getItemValueString("pageLabel")}]]></xp:this.value>
+								</xp:label>
+							</td>
+							<td>
+								<xp:label id="label2">
+									<xp:this.value><![CDATA[#{javascript:entry.getDocument().getItemValueString("pageTarget")}]]></xp:this.value>
+								</xp:label>
+							</td>
+						</tr>
+					</xp:repeat>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<xp:pager partialRefresh="true" id="pager1" for="repeat1"
+		disableTheme="true">
+		<xp:pagerControl type="First" id="pagerControl1"></xp:pagerControl>
+		<xp:pagerControl type="Previous" id="pagerControl2"></xp:pagerControl>
+
+		<xp:pagerControl type="Group" id="pagerControl4"></xp:pagerControl>
+		<xp:pagerControl type="Next" id="pagerControl5"></xp:pagerControl>
+		<xp:pagerControl type="Last" id="pagerControl6"></xp:pagerControl>
+	</xp:pager>
+</xp:view>
