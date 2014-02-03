@@ -40,13 +40,8 @@
 			</table>
 		</div>
 	</div>
-	<xp:pager partialRefresh="true" id="pager1" for="repeat1"
+	<xp:pager partialRefresh="false" id="pager1" for="repeat1"
 		disableTheme="true">
-		<xp:pagerControl type="First" id="pagerControl1"></xp:pagerControl>
-		<xp:pagerControl type="Previous" id="pagerControl2"></xp:pagerControl>
-
 		<xp:pagerControl type="Group" id="pagerControl4"></xp:pagerControl>
-		<xp:pagerControl type="Next" id="pagerControl5"></xp:pagerControl>
-		<xp:pagerControl type="Last" id="pagerControl6"></xp:pagerControl>
 	</xp:pager>
 </xp:view>
