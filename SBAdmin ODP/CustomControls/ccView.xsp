@@ -3,45 +3,62 @@
 	<xp:this.data>
 		<xp:dominoView var="view1" viewName="pages"></xp:dominoView>
 	</xp:this.data>
-	<div class="panel panel-default">
+	<div class="panel panel-primary">
 		<div class="panel-heading">
-			<h3 class="panel-title">View</h3>
+			<h3 class="panel-title">
+				<xp:text>
+					<xp:this.value><![CDATA[#{javascript:var vn = compositeData.viewname;
+return vn.equals("") ? "View" : vn;}]]></xp:this.value>
+				</xp:text>
+				<div class="pull-right">
+					<xp:pager partialRefresh="false" id="pager2" for="repeat1"
+						disableTheme="true">
+						<xp:pagerControl type="Group" id="pagerControl1"></xp:pagerControl>
+					</xp:pager>
+				</div>
+			</h3>
 		</div>
-		<div class="panel-body">
-			<table class="table table-bordered table-hover table-striped tablesorter">
-				<thead>
+		<table class="table table-hover table-striped tablesorter">
+			<colgroup>
+				<col style="width:50%" />
+				<col style="width:50%" />
+			</colgroup>
+			<thead>
+				<tr class="">
+					<th class="header">
+						label
+						<i class="fa fa-sort"></i>
+					</th>
+					<th class="header">
+						target
+						<i class="fa fa-sort"></i>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<xp:repeat id="repeat1" rows="30" value="#{view1}" var="entry">
 					<tr>
-						<th class="header">
-							label
-							<i class="fa fa-sort"></i>
-						</th>
-						<th class="header">
-							tatget
-							<i class="fa fa-sort"></i>
-						</th>
+						<td>
+							<xp:label id="label1">
+								<xp:this.value><![CDATA[#{javascript:entry.getDocument().getItemValueString("pageLabel")}]]></xp:this.value>
+							</xp:label>
+						</td>
+						<td>
+							<xp:label id="label2">
+								<xp:this.value><![CDATA[#{javascript:entry.getDocument().getItemValueString("pageTarget")}]]></xp:this.value>
+							</xp:label>
+						</td>
 					</tr>
-				</thead>
-				<tbody>
-					<xp:repeat id="repeat1" rows="30" value="#{view1}" var="entry">
-						<tr>
-							<td>
-								<xp:label id="label1">
-									<xp:this.value><![CDATA[#{javascript:entry.getDocument().getItemValueString("pageLabel")}]]></xp:this.value>
-								</xp:label>
-							</td>
-							<td>
-								<xp:label id="label2">
-									<xp:this.value><![CDATA[#{javascript:entry.getDocument().getItemValueString("pageTarget")}]]></xp:this.value>
-								</xp:label>
-							</td>
-						</tr>
-					</xp:repeat>
-				</tbody>
-			</table>
+				</xp:repeat>
+			</tbody>
+		</table>
+		<div class="panel-footer" style="height:40px">
+			<div class="pull-right">
+				<xp:pager partialRefresh="false" id="pager1" for="repeat1"
+					disableTheme="true">
+					<xp:pagerControl type="Group" id="pagerControl4"></xp:pagerControl>
+				</xp:pager>
+			</div>
 		</div>
 	</div>
-	<xp:pager partialRefresh="false" id="pager1" for="repeat1"
-		disableTheme="true">
-		<xp:pagerControl type="Group" id="pagerControl4"></xp:pagerControl>
-	</xp:pager>
 </xp:view>

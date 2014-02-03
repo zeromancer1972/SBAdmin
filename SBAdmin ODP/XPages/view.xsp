@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
 
-	<xc:ccLayout title="View" subtitle="your data"><xp:this.facets>
-	<xp:div xp:key="facetPage">
-		<xc:ccView></xc:ccView></xp:div></xp:this.facets></xc:ccLayout></xp:view>
+	<xc:ccLayout title="View" subtitle="your data">
+		<xp:this.facets>
+			<xp:div xp:key="facetPage">
+				<xc:ccView viewname="Pages"></xc:ccView>
+			</xp:div>
+		</xp:this.facets>
+	</xc:ccLayout>
+</xp:view>
