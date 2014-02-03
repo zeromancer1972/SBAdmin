@@ -11,9 +11,11 @@
 return vn.equals("") ? "View" : vn;}]]></xp:this.value>
 				</xp:text>
 				<div class="pull-right">
-					<xp:pager partialRefresh="false" id="pager2" for="repeat1"
-						disableTheme="true">
-						<xp:pagerControl type="Group" id="pagerControl1"></xp:pagerControl>
+					<xp:pager partialRefresh="false" id="pager2"
+						for="repeat1" disableTheme="true">
+						<xp:pagerControl type="Group"
+							id="pagerControl1">
+						</xp:pagerControl>
 					</xp:pager>
 				</div>
 			</h3>

@@ -5,7 +5,7 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<i class="fa fa-envelope"></i>
 				Messages
-				<span class="label label-info">7</span>
+				<span class="label label-info"><xp:text value="#{javascript:message.messageCount}"></xp:text></span>
 				<b class="caret"></b>
 			</a>
 			<ul class="dropdown-menu">
@@ -81,7 +81,8 @@
 			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 				<i class="fa fa-bell"></i>
 				Alerts
-				<span class="label label-danger">3</span>
+				<span class="label label-danger">
+					<xp:text value="#{javascript:alert.alertCount}"></xp:text></span>
 				<b class="caret"></b>
 			</a>
 			<ul class="dropdown-menu">
