@@ -11,11 +11,9 @@
 return vn.equals("") ? "View" : vn;}]]></xp:this.value>
 				</xp:text>
 				<div class="pull-right">
-					<xp:pager partialRefresh="false" id="pager2"
-						for="repeat1" disableTheme="true">
-						<xp:pagerControl type="Group"
-							id="pagerControl1">
-						</xp:pagerControl>
+					<xp:pager partialRefresh="true" id="pager2" for="repeat1"
+						disableTheme="true" layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
+						
 					</xp:pager>
 				</div>
 			</h3>
@@ -51,14 +49,16 @@ return vn.equals("") ? "View" : vn;}]]></xp:this.value>
 							</xp:label>
 						</td>
 					</tr>
+
 				</xp:repeat>
 			</tbody>
 		</table>
+		
 		<div class="panel-footer" style="height:40px">
 			<div class="pull-right">
-				<xp:pager partialRefresh="false" id="pager1" for="repeat1"
-					disableTheme="true">
-					<xp:pagerControl type="Group" id="pagerControl4"></xp:pagerControl>
+				<xp:pager partialRefresh="true" id="pager1" for="repeat1"
+					disableTheme="true" layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
+					
 				</xp:pager>
 			</div>
 		</div>

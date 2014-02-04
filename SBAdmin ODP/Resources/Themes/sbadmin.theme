@@ -43,10 +43,7 @@
 		<content-type>application/x-javascript</content-type>
 		<href>js/tablesorter/jquery.tablesorter.js</href>
 	</resource>
-	<resource>
-		<content-type>application/x-javascript</content-type>
-		<href>js/tablesorter/tables.js</href>
-	</resource>
+	
 	
 	<resource>
 		<content-type>application/x-javascript</content-type>
