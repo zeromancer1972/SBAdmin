@@ -4,7 +4,9 @@
 	<xc:ccLayout title="View" subtitle="your data">
 		<xp:this.facets>
 			<xp:div xp:key="facetPage">
-				<xc:ccView viewname="Pages"></xc:ccView>
+				<xc:ccView>
+					<xc:this.viewname><![CDATA[#{javascript:context.getUrlParameter("view")}]]></xc:this.viewname>
+				</xc:ccView>
 			</xp:div>
 		</xp:this.facets>
 	</xc:ccLayout>

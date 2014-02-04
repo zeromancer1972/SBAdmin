@@ -1,22 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:this.data>
-		<xp:dominoView var="view1" viewName="pages"></xp:dominoView>
+		<xp:dominoView var="view1">
+			<xp:this.viewName><![CDATA[#{javascript:var vn = compositeData.viewname;
+
+if(vn!=null){
+	return vn;
+}}]]></xp:this.viewName>
+		</xp:dominoView>
 	</xp:this.data>
-	<div class="panel panel-primary">
-		<div class="panel-heading">
-			<h3 class="panel-title">
-				<xp:text>
+	<div class="panel panel-default">
+		<div class="panel-heading" style="height:3em">
+			<h4 class="panel-title pull-left" style="font-weight:bold;">
+				<xp:text disableTheme="true">
 					<xp:this.value><![CDATA[#{javascript:var vn = compositeData.viewname;
-return vn.equals("") ? "View" : vn;}]]></xp:this.value>
+if(!vn.equals("")){
+var v = database.getView(vn);
+if(v!=null){
+	return v.getName()
+}}}]]></xp:this.value>
 				</xp:text>
-				<div class="pull-right">
-					<xp:pager partialRefresh="true" id="pager2" for="repeat1"
-						disableTheme="true" layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
-						
-					</xp:pager>
-				</div>
-			</h3>
+			</h4>
+			<div class="pull-right">
+				<xp:pager partialRefresh="true" id="pager2" for="repeat1"
+					disableTheme="true"
+					layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
+
+				</xp:pager>
+			</div>
+
 		</div>
 		<table class="table table-hover table-striped tablesorter">
 			<colgroup>
@@ -53,12 +65,12 @@ return vn.equals("") ? "View" : vn;}]]></xp:this.value>
 				</xp:repeat>
 			</tbody>
 		</table>
-		
 		<div class="panel-footer" style="height:40px">
 			<div class="pull-right">
 				<xp:pager partialRefresh="true" id="pager1" for="repeat1"
-					disableTheme="true" layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
-					
+					disableTheme="true"
+					layout="SeparatorPage Status FirstArrow Separator PreviousArrow Separator SeparatorPage Group Separator NextArrow Separator LastArrow">
+
 				</xp:pager>
 			</div>
 		</div>

@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='view' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.0' replicaid='C1257C73005E5D1F'>
-<noteinfo noteid='116' unid='8EF4F29E5AB44333C1257C73005E5D36' sequence='9'>
+<noteinfo noteid='116' unid='8EF4F29E5AB44333C1257C73005E5D36' sequence='11'>
 <created><datetime>20140202T181042,46+01</datetime></created>
-<modified><datetime>20140202T220650,17+01</datetime></modified>
-<revised><datetime>20140202T220650,16+01</datetime></revised>
-<lastaccessed><datetime>20140202T220650,17+01</datetime></lastaccessed>
+<modified><datetime>20140204T231002,91+01</datetime></modified>
+<revised><datetime>20140204T231002,90+01</datetime></revised>
+<lastaccessed><datetime>20140204T231002,91+01</datetime></lastaccessed>
 <addedtofile><datetime>20140202T181042,48+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
-<item name='$FormulaClass'><text>1</text></item>
-<item name='$TITLE' sign='true'><text>pages</text></item>
+<item name='$FormulaClass' sign='true'><text>1</text></item>
 <item name='$Index' sign='true'><text/></item>
 <item name='$Formula' summary='true' sign='true'><formula compiled='true'>
 dAAFADAAKwAEAAkACQAJAAQAcGFnZU9yZGVycGFnZUxhYmVsJENvbmZsaWN0JFJFRgAEAAQAAAAw
@@ -32,7 +31,6 @@ AAAAAAABAAAAAAAAAAgAAAAAAAEA
 </rawitemdata></item>
 <item name='$Comment' sign='true'><text/></item>
 <item name='$Flags'><text>Y</text></item>
-<item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$V5ACTIONS' sign='true'>
 <rawitemdata type='1'>
 vRw/AAAAAQABAAAAAQAAAAAAAAAAAAAACAACAHn/bAABAPDw8AABAAAAAAAJAAAAAAABAPDw8AAA
@@ -51,5 +49,7 @@ AABDX3V0DQC+fL7/IAAAAAUAAACdAQAABQAAAAAAAABfQ29weQIOAM58vv8wAAAABQAAAJ0BAAAW
 AAAAAAAAAENvcHkgYXMgRG9jdW1lbnQgX0xpbmsPAN58vv8oAAAABQAAAJ0BAAAOAAAAAAAAAENv
 cHkgYXMgX1RhYmxlEADufL7/IAAAAAUAAACdAQAABgAAAAAAAABQX2FzdGURAP58vv8gAAAABQAA
 AJ0BAAAFAAAAAAAAAF9PcGVuABIADn2+/yIAAAAFAAAAnQEAAAgAAAAAAAAAQm9va21hcmsTAB59
-</rawitemdata></item></note>
+</rawitemdata></item>
+<item name='$TITLE' sign='true'><text>Application Pages|pages</text></item>
+<item name='$DesignerVersion' sign='true'><text>8.5.3</text></item></note>
 
