@@ -51,3 +51,7 @@ th.header {
 tr.theader {
 	background-color: #ddd;
 }
+
+.panel-title i {
+	margin-right: 5px;
+}
