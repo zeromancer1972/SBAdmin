@@ -52,6 +52,6 @@ tr.theader {
 	background-color: #ddd;
 }
 
-.panel-title i {
+.panel-title i, i.fa {
 	margin-right: 5px;
 }
