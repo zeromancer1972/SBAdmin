@@ -19,6 +19,10 @@ if(url.indexOf(".xsp")==-1){
 	context.redirectToPage(url+view.getPageName())
 }}]]></xp:this.beforePageLoad>
 	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+	<debug:toolbar defaultCollapsed="true" collapseTo="left"
+		toolbarColor="#000000">
+		<debug:this.loaded><![CDATA[${javascript:@IsMember("[Debug]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></debug:this.loaded>
+	</debug:toolbar>
 	<div id="wrapper">
 
 		<!-- Sidebar -->
